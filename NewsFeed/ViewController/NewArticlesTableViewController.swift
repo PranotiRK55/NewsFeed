@@ -51,9 +51,26 @@ class NewsArticlesTableViewController: UIViewController, UITableViewDelegate, UI
         ])
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.newsFeedTableView.deselectSelectedRow(animated: true)
+    }
+    
     private func setupNavBar() {
         navigationItem.title = "Articles"
         self.navigationController?.navigationBar.barTintColor = .lightGray
+    }
+    
+    //custom delegation
+    func updateFavoriteItem(cell: UITableViewCell) {
+        guard let indexPath = newsFeedTableView?.indexPath(for: cell) else { return }
+        if (self.newsArticles[indexPath.row].favorite == false) {
+            self.newsArticles[indexPath.row].favorite = true
+        } else {
+            self.newsArticles[indexPath.row].favorite = false
+        }
+        self.newsFeedTableView.reloadData()
     }
 }
 
@@ -82,10 +99,20 @@ extension NewsArticlesTableViewController {
         let filledImg = UIImage(imageLiteralResourceName: "star_filled")
             
         if  self.newsArticles[indexPath.row].favorite == false {
-            cell.favImg.image = nonFilledImg
+            UIView.transition(with: cell.favImg,
+                              duration: 0.75,
+                              options: .transitionCrossDissolve,
+                              animations: { cell.favImg.image =  nonFilledImg},
+                              completion: nil)
         } else {
-            cell.favImg.image = filledImg
+            UIView.transition(with: cell.favImg,
+                              duration: 0.75,
+                              options: .transitionCrossDissolve,
+                              animations: { cell.favImg.image =  filledImg},
+                              completion: nil)
         }
+        
+        cell.newsFeedVC = self
         
         return cell
     }
