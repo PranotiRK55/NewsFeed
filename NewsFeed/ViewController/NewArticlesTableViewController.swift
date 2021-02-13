@@ -26,6 +26,9 @@ class NewsArticlesTableViewController: UIViewController, UITableViewDelegate, UI
         
         self.newsFeedTableView.rowHeight = UITableView.automaticDimension
         
+        //accessibility identifier for UI Tests
+        self.newsFeedTableView.accessibilityIdentifier = "articlesTableView"
+        
         //register custom cell
         self.newsFeedTableView.register(NewsArticleCustomCell.self, forCellReuseIdentifier: "ArticlesCell")
         
