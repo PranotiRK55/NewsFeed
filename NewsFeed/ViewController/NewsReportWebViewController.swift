@@ -1,5 +1,5 @@
 //
-//  WebVCForNewsFeedViewController.swift
+//  NewsReportWebViewController.swift
 //  NewsFeed
 //
 //  Created by PRANOTI KULKARNI on 2/12/21.
@@ -9,15 +9,15 @@
 import UIKit
 import WebKit
 
-class WebVCForNewsFeedViewController: UIViewController, WKUIDelegate {
+class NewsReportWebViewController: UIViewController, WKUIDelegate {
     
-    var strURL = ""
+    var strURL: String? = ""
 
     override func loadView() {
         super.loadView()
         setupUI()
-        let myURL = URL(string: strURL)
-        let myRequest = URLRequest(url: myURL!)
+        guard let myURL = URL(string: strURL ?? "") else { return }
+        let myRequest = URLRequest(url: myURL)
         webView.load(myRequest)
     }
     
@@ -57,6 +57,4 @@ class WebVCForNewsFeedViewController: UIViewController, WKUIDelegate {
                 .constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
         ])
     }
-
-
 }
