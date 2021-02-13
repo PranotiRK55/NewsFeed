@@ -6,7 +6,6 @@
 //  Copyright © 2021 BetterUp. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 protocol NewsFeedDelegate {
@@ -99,6 +98,7 @@ extension NewsArticlesTableViewController: UITableViewDelegate, UITableViewDataS
     //render the cell and display data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseIdentifier, for: indexPath) as? NewsArticleCustomCell else { return UITableViewCell() }
+        
         cell.accessoryType = .disclosureIndicator
         cell.newsTitle.text = self.newsArticles[indexPath.row].title
         cell.newsDescription.text = self.newsArticles[indexPath.row].description
@@ -143,6 +143,7 @@ extension NewsArticlesTableViewController: NewsFeedDelegate {
 extension NewsArticlesTableViewController {
     private func readAndLoadJsonData() {
         guard let path = Bundle.main.url(forResource: "articles", withExtension: "json") else { return }
+        
         do {
             let jsonData = try Data(contentsOf: path)
             let decoder = JSONDecoder()
