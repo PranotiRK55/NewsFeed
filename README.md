@@ -67,15 +67,15 @@ Some of the questions used when reviewing submissions include:
 - Copy a link to the Pull Request and submit it via the Greenhouse project submission link you received via email from our team
 
 
-##Pranoti Kulkarni
+## Pranoti Kulkarni
 
-##Thank you for this amazing challenge. Please run this project on iOS 13 simulator also to see the launch board i have added.
-##Key points:
-1) I have created custom tableview cell (programmatically) to show the contents of the News article.
-2) Once the user taps on this cell, he will be taken to an embedded webPage (WKWebView) to display the entire article which is related to the news.
-3) For some addons i have implemented animation when the user taps on the star icon, so its marked as their favorite feed.
-4) Added target for UIAutomation tests which wasn't part of this project, since i love writing UI tests :)
-5) Have tried to follow proper naming conventions for file names and even properties.
-6) Have used MVC architecture pattern. 
-7) Have done code cleanup at the end to remove any unwanted warnings as well.
+## Thank you for this amazing challenge. Please run this project on iOS 13 simulator also to see the launch board i have added.
+## Key points:
+## 1) I have created custom tableview cell (programmatically) to show the contents of the News article.
+## 2) Once the user taps on this cell, he will be taken to an embedded webPage (WKWebView) to display the entire article which is related to the news.
+## 3) For some addons i have implemented animation when the user taps on the star icon, so its marked as their favorite feed.
+## 4) Added target for UIAutomation tests which wasn't part of this project, since i love writing UI tests :)
+## 5) Have tried to follow proper naming conventions for file names and even properties.
+## 6) Have used MVC architecture pattern. 
+## 7) Have done code cleanup at the end to remove any unwanted warnings as well.
 
