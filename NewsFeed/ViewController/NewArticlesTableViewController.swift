@@ -52,18 +52,7 @@ class NewsArticlesTableViewController: UIViewController {
         self.newsFeedTableView.tableFooterView = UIView()
         
         self.view.addSubview(self.newsFeedTableView)
-        
-        //auto layout constraints for the table view
-        NSLayoutConstraint.activate([
-            newsFeedTableView.topAnchor
-                .constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            newsFeedTableView.leftAnchor
-                .constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-            newsFeedTableView.bottomAnchor
-                .constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            newsFeedTableView.rightAnchor
-                .constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
-        ])
+        setUpConstraints()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +64,20 @@ class NewsArticlesTableViewController: UIViewController {
     private func setupNavBar() {
         navigationItem.title = Constants.navigationTitle
         self.navigationController?.navigationBar.barTintColor = .lightGray
+    }
+    
+    private func setUpConstraints() {
+        //auto layout constraints for the table view
+        NSLayoutConstraint.activate([
+            newsFeedTableView.topAnchor
+                .constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            newsFeedTableView.leftAnchor
+                .constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            newsFeedTableView.bottomAnchor
+                .constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            newsFeedTableView.rightAnchor
+                .constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
+        ])
     }
 }
 

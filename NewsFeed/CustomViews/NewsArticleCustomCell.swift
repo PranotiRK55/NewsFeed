@@ -13,15 +13,6 @@ class NewsArticleCustomCell: UITableViewCell {
     private var newsArticles = [Article]()
     var delegate: NewsFeedDelegate?
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupConstraints()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     lazy var newsTitle: UILabel = {
         let newsTitle = UILabel()
         newsTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -51,9 +42,17 @@ class NewsArticleCustomCell: UITableViewCell {
         return favImg
     }()
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //mark as favorite or not when user selects the star on the cell
-    @objc func starTapped()
-    {
+    @objc func starTapped() {
         delegate?.updateFavoriteItem(cell: self)
     }
     
@@ -61,6 +60,7 @@ class NewsArticleCustomCell: UITableViewCell {
         contentView.addSubview(newsTitle)
         contentView.addSubview(newsDescription)
         contentView.addSubview(favImg)
+        
         let views = [
             "newsTitle"  : newsTitle,
             "newsDescription" : newsDescription,

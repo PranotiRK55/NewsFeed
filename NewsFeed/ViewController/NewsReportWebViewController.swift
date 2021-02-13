@@ -12,6 +12,14 @@ import WebKit
 class NewsReportWebViewController: UIViewController, WKUIDelegate {
     
     var strURL: String? = ""
+    
+    lazy var webView: WKWebView = {
+        let webConfiguration = WKWebViewConfiguration()
+        let webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        return webView
+    }()
 
     override func loadView() {
         super.loadView()
@@ -33,14 +41,6 @@ class NewsReportWebViewController: UIViewController, WKUIDelegate {
     private func setupNavBar() {
         self.navigationController?.navigationBar.tintColor = .black
     }
-    
-    lazy var webView: WKWebView = {
-        let webConfiguration = WKWebViewConfiguration()
-        let webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        return webView
-    }()
     
     func setupUI() {
         view.backgroundColor = .white
