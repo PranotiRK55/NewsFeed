@@ -11,7 +11,7 @@ import UIKit
 class NewsArticleCustomCell: UITableViewCell {
     
     private var newsArticles = [Article]()
-    var newsFeedVC = NewsArticlesTableViewController()
+    var delegate: NewsFeedDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -54,7 +54,7 @@ class NewsArticleCustomCell: UITableViewCell {
     //mark as favorite or not when user selects the star on the cell
     @objc func starTapped()
     {
-        newsFeedVC.updateFavoriteItem(cell: self)
+        delegate?.updateFavoriteItem(cell: self)
     }
     
     private func setupConstraints() {
@@ -67,9 +67,9 @@ class NewsArticleCustomCell: UITableViewCell {
             "favImg": favImg
         ]
         
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-34-[favImg(40)]", options: [], metrics: nil, views: views))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-30-[favImg(40)]", options: [], metrics: nil, views: views))
         contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[newsTitle]-[newsDescription]-|", options: [], metrics: nil, views: views))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[newsTitle]-[favImg(40)]-|", options: [], metrics: nil, views: views))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[newsDescription]-[favImg(40)]-|", options: [], metrics: nil, views: views))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[newsTitle]-[favImg(30)]-|", options: [], metrics: nil, views: views))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[newsDescription]-[favImg(30)]-|", options: [], metrics: nil, views: views))
     }
 }
