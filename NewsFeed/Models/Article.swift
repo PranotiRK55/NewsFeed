@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Article {
-    var id: Int
+struct News: Codable {
+    let articles: [Article]
+}
+
+struct Article: Codable {
     var title: String
-    var createdAt: Date
-    var source: String
     var description: String
     var favorite: Bool
-    var heroImage: URL
-    var link: URL
+    var link: String
 }
