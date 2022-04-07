@@ -2,8 +2,7 @@
 //  Article.swift
 //  NewsFeed
 //
-//  Created by Nick Donaldson on 3/28/19.
-//  Copyright © 2019 BetterUp. All rights reserved.
+//  Created by PRANOTI KULKARNI on 2/12/21.
 //
 
 import Foundation

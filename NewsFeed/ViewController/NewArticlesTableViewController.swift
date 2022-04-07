@@ -3,22 +3,15 @@
 //  NewsFeed
 //
 //  Created by PRANOTI KULKARNI on 2/12/21.
-//  Copyright © 2021 BetterUp. All rights reserved.
 //
 
 import UIKit
-
-protocol NewsFeedDelegate {
-    func updateFavoriteItem(cell: UITableViewCell)
-}
+import SwiftUI
 
 class NewsArticlesTableViewController: UIViewController {
     
     private enum Constants {
-        static let starImgName = "star"
-        static let unfilledStarImgName = "star_filled"
         static let tableViewAccessibilityIdentifier = "articlesTableView"
-        static let cellReuseIdentifier = "ArticlesCell"
         static let navigationTitle = "Articles"
     }
     
@@ -39,9 +32,6 @@ class NewsArticlesTableViewController: UIViewController {
         
         //accessibility identifier for UI Tests
         self.newsFeedTableView.accessibilityIdentifier = Constants.tableViewAccessibilityIdentifier
-        
-        //register custom cell
-        self.newsFeedTableView.register(NewsArticleCustomCell.self, forCellReuseIdentifier: Constants.cellReuseIdentifier)
         
         //enable auto layout for tableview
         self.newsFeedTableView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,13 +59,13 @@ class NewsArticlesTableViewController: UIViewController {
         //auto layout constraints for the table view
         NSLayoutConstraint.activate([
             newsFeedTableView.topAnchor
-                .constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                .constraint(equalTo: view.topAnchor),
             newsFeedTableView.leftAnchor
-                .constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+                .constraint(equalTo: view.leftAnchor),
             newsFeedTableView.bottomAnchor
-                .constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                .constraint(equalTo: view.bottomAnchor),
             newsFeedTableView.rightAnchor
-                .constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
+                .constraint(equalTo: view.rightAnchor)
         ])
     }
 }
@@ -85,9 +75,9 @@ extension NewsArticlesTableViewController: UITableViewDelegate, UITableViewDataS
     
     //when user taps on the row should navigate to webView that shows the news article
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let webView = NewsReportWebViewController()
-        webView.strURL = self.newsArticles[indexPath.row].link
-        self.navigationController?.pushViewController(webView, animated: true)
+        let webView = NewsArticleWebViewUsingSwiftUI(myURL: self.newsArticles[indexPath.row].link)
+        let webViewVC = UIHostingController(rootView: webView)
+        self.navigationController?.pushViewController(webViewVC, animated: true)
     }
     
     //number of rows for that section
@@ -97,45 +87,7 @@ extension NewsArticlesTableViewController: UITableViewDelegate, UITableViewDataS
     
     //render the cell and display data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseIdentifier, for: indexPath) as? NewsArticleCustomCell else { return UITableViewCell() }
-        
-        cell.accessoryType = .disclosureIndicator
-        cell.newsTitle.text = self.newsArticles[indexPath.row].title
-        cell.newsDescription.text = self.newsArticles[indexPath.row].description
-            
-        if  self.newsArticles[indexPath.row].favorite == false {
-            let nonFilledImg = UIImage(imageLiteralResourceName: "star")
-            UIView.transition(with: cell.favImg,
-                              duration: 0.75,
-                              options: .transitionCrossDissolve,
-                              animations: { cell.favImg.image = nonFilledImg},
-                              completion: nil)
-        } else {
-            let filledImg = UIImage(imageLiteralResourceName: "star_filled")
-            UIView.transition(with: cell.favImg,
-                              duration: 1,
-                              options: .transitionCrossDissolve,
-                              animations: { cell.favImg.image =  filledImg},
-                              completion: nil)
-        }
-        
-        cell.delegate = self
-        
-        return cell
-    }
-}
-
-// MARK: - NEWSFEED DELEGATE
-extension NewsArticlesTableViewController: NewsFeedDelegate {
-    //custom delegation
-    func updateFavoriteItem(cell: UITableViewCell) {
-        guard let indexPath = newsFeedTableView?.indexPath(for: cell) else { return }
-        if self.newsArticles[indexPath.row].favorite == false {
-            self.newsArticles[indexPath.row].favorite = true
-        } else {
-            self.newsArticles[indexPath.row].favorite = false
-        }
-        self.newsFeedTableView.reloadData()
+        NewsArticleCustomCell(article: self.newsArticles[indexPath.row])
     }
 }
 

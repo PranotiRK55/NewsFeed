@@ -2,8 +2,7 @@
 //  NewsFeedUITests.swift
 //  NewsFeedUITests
 //
-//  Created by PRANOTI KULKARNI on 2/13/21.
-//  Copyright © 2021 BetterUp. All rights reserved.
+//  Created by PRANOTI KULKARNI on 2/12/21.
 //
 
 import XCTest

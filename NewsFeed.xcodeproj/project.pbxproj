@@ -13,10 +13,12 @@
 		010BC7E2224D207800FDDF3D /* NewsFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BC7E1224D207800FDDF3D /* NewsFeedTests.swift */; };
 		010BC7EF224D20E300FDDF3D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BC7EE224D20E300FDDF3D /* Article.swift */; };
 		010BC7F1224D21E600FDDF3D /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = 010BC7F0224D21E600FDDF3D /* articles.json */; };
+		6B058F1B25FED9B0004DED23 /* NewsArticleWebViewUsingSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B058F1A25FED9B0004DED23 /* NewsArticleWebViewUsingSwiftUI.swift */; };
 		6B2DF6F725D73B9A00F471E3 /* NewsArticleCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DF6F625D73B9A00F471E3 /* NewsArticleCustomCell.swift */; };
 		6B2DF70425D787EC00F471E3 /* NewsReportWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DF70325D787EC00F471E3 /* NewsReportWebViewController.swift */; };
 		6B2DF71025D83E5100F471E3 /* UITableView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DF70F25D83E5100F471E3 /* UITableView+Helper.swift */; };
 		6B2DF71A25D8489500F471E3 /* NewsFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DF71925D8489500F471E3 /* NewsFeedUITests.swift */; };
+		6B7CEA1A25F99B8F004DFE4D /* NewsArticleSwiftUIRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CEA1925F99B8F004DFE4D /* NewsArticleSwiftUIRowView.swift */; };
 		6BD7CB1D25D7386F0097A894 /* NewArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD7CB1C25D7386F0097A894 /* NewArticlesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,12 +50,14 @@
 		010BC7E3224D207800FDDF3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		010BC7EE224D20E300FDDF3D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		010BC7F0224D21E600FDDF3D /* articles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
+		6B058F1A25FED9B0004DED23 /* NewsArticleWebViewUsingSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleWebViewUsingSwiftUI.swift; sourceTree = "<group>"; };
 		6B2DF6F625D73B9A00F471E3 /* NewsArticleCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleCustomCell.swift; sourceTree = "<group>"; };
 		6B2DF70325D787EC00F471E3 /* NewsReportWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsReportWebViewController.swift; sourceTree = "<group>"; };
 		6B2DF70F25D83E5100F471E3 /* UITableView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helper.swift"; sourceTree = "<group>"; };
 		6B2DF71725D8489500F471E3 /* NewsFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2DF71925D8489500F471E3 /* NewsFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedUITests.swift; sourceTree = "<group>"; };
 		6B2DF71B25D8489500F471E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B7CEA1925F99B8F004DFE4D /* NewsArticleSwiftUIRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleSwiftUIRowView.swift; sourceTree = "<group>"; };
 		6BD7CB1C25D7386F0097A894 /* NewArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArticlesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				6B2DF6F625D73B9A00F471E3 /* NewsArticleCustomCell.swift */,
+				6B7CEA1925F99B8F004DFE4D /* NewsArticleSwiftUIRowView.swift */,
+				6B058F1A25FED9B0004DED23 /* NewsArticleWebViewUsingSwiftUI.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -233,7 +239,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1220;
-				ORGANIZATIONNAME = BetterUp;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					010BC7C8224D207700FDDF3D = {
 						CreatedOnToolsVersion = 10.1;
@@ -303,6 +309,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B2DF71025D83E5100F471E3 /* UITableView+Helper.swift in Sources */,
+				6B7CEA1A25F99B8F004DFE4D /* NewsArticleSwiftUIRowView.swift in Sources */,
+				6B058F1B25FED9B0004DED23 /* NewsArticleWebViewUsingSwiftUI.swift in Sources */,
 				6BD7CB1D25D7386F0097A894 /* NewArticlesTableViewController.swift in Sources */,
 				6B2DF70425D787EC00F471E3 /* NewsReportWebViewController.swift in Sources */,
 				010BC7EF224D20E300FDDF3D /* Article.swift in Sources */,
@@ -478,11 +486,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NewsFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.betterup.NewsFeed;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pranoti.NewsFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -495,11 +504,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NewsFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.betterup.NewsFeed;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pranoti.NewsFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -518,7 +528,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.betterup.NewsFeedTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pranoti.NewsFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -538,7 +548,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.betterup.NewsFeedTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pranoti.NewsFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
